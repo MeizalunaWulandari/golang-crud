@@ -14,6 +14,11 @@ func Index(response http.ResponseWriter, request *http.Request) {
 }
 
 func Add(response http.ResponseWriter, request *http.Request) {
+	templ, err := template.ParseFiles("views/pasien/add.html")
+	if err != nil {
+		panic(err)
+	}
+	templ.Execute(response, nil)
 
 }
 
